@@ -211,6 +211,7 @@ def print_report(report):
 
     print("=" * 50)
     print("Report saved successfully.\n")
+    print("Bye")
 
 
 # =========================
