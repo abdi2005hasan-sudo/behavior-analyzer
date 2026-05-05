@@ -101,8 +101,8 @@ def get_top_processes(limit = 5):
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             continue
 
-        process_list.sort(key = lambda p: p['cpu_percent'], reverse = True)
-        return process_list[:limit]
+    process_list.sort(key = lambda p: p['cpu_percent'], reverse = True)
+    return process_list[:limit]
 
 
 def analyze_behavior(cpu, memory, disk, top_processes):

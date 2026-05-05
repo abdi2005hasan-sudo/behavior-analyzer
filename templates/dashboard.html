@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Behavior Analyzer Dashboard</title>
+</head>
+<body>
+
+    <h1>Behavior Analyzer Dashboard</h1>
+
+    <p><strong>Time:</strong> {{ report.timestamp }}</p>
+    <p><strong>CPU Usage:</strong> {{ report.cpu_usage_percent }}%</p>
+
+    <p>
+        <strong>Memory:</strong>
+        {{ report.memory.percent }}%
+        ({{ report.memory.used_gb }} GB / {{ report.memory.total_gb }} GB)
+    </p>
+
+    <p>
+        <strong>Disk:</strong>
+        {{ report.disk.percent }}%
+        ({{ report.disk.used_gb }} GB / {{ report.disk.total_gb }} GB)
+    </p>
+
+    <h2>Analysis</h2>
+    <ul>
+        {% for item in report.analysis %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
